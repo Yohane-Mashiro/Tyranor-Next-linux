@@ -99,6 +99,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: 检出源码
+        uses: actions/checkout@v4
+
       - name: 下载二进制 RPM
         uses: actions/download-artifact@v4
         with:
