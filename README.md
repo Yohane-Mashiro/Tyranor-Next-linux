@@ -45,7 +45,7 @@ sudo dnf makecache
 | --- | --- | --- | --- |
 | `tyranor-next-linux` | 主程序，提供游戏库、引擎识别、封面、存档管理、WebDAV、XP3 工具和启动界面 | `noarch` | Fedora 45；依赖 PyQt6 WebEngine、KiriKiri 和 Ren'Py 运行时 |
 | `tyranor-next-krkr-runtime` | 原生 KiriKiri 运行时 `krkrsdl3`，用于启动 `.xp3` 游戏 | `x86_64` | Fedora 45 x86_64；支持 Wayland、ALSA、XP3 和中央存档目录 |
-| `tyranor-next-renpy-runtime` | Ren'Py 8.5.3 Linux 运行时，用于 Ren'Py 游戏 | `x86_64` | Fedora 45 x86_64；游戏自带启动器可执行时优先使用自带版本 |
+| `tyranor-next-renpy-runtime` | Ren'Py 8.5.3 Linux 运行时，用于 Ren'Py 游戏 | `x86_64` | Fedora 45 x86_64；游戏自带启动器可执行时优先使用自带版本. |
 
 ## 许可证
 
