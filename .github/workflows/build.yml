@@ -3,7 +3,7 @@ name: 构建与测试
 on:
   push:
     branches:
-      - main
+      - "**"
     tags:
       - "v*"
   pull_request:
