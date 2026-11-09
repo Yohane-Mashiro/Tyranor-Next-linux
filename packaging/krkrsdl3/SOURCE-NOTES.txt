@@ -1,0 +1,41 @@
+KiriKiri Linux 运行时源码
+
+上游构建仓库：
+https://github.com/krkrsdl3/krkrsdl3_build
+
+源码位于 Git 子模块：
+vendor/krkrsdl3
+
+固定提交：
+2faa81e2406ef1b185962c2fa5d7f3b9573da2eb
+
+核心子模块：
+https://github.com/krkrsdl3/krkrsdl3
+
+固定提交：
+85efdae409ca9f178df5965f6a58f46d46d665f9
+
+初始化源码：
+
+git submodule update --init --recursive
+
+本项目补丁：
+
+1. packaging/krkrsdl3/patches/0001-save-directory.patch
+   支持 TYRANOR_SAVE_DIR 中央存档目录。
+
+2. packaging/krkrsdl3/patches/0002-sdl3-diagnostics.patch
+   输出 SDL3 初始化失败原因以及视频和音频驱动。
+
+3. packaging/krkrsdl3/patches/0003-sdl3-linux-features.patch
+   启用 SDL3 的 ALSA、Vulkan、Wayland 和 X11 功能。
+
+源码构建：
+
+./packaging/build-krkrsdl3-source.sh
+
+需要设置 VCPKG_ROOT，并安装 CMake、Ninja、NASM、ALSA、Wayland、
+X11、Vulkan 和 RPM 构建依赖。
+
+ALSA 的 vcpkg 覆层位于：
+packaging/krkrsdl3/vcpkg-overlays/alsa

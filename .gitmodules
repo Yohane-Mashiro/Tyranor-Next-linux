@@ -1,0 +1,3 @@
+[submodule "vendor/krkrsdl3"]
+	path = vendor/krkrsdl3
+	url = https://github.com/krkrsdl3/krkrsdl3_build.git

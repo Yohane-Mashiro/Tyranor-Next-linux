@@ -1,0 +1,32 @@
+diff --git a/vcpkg.json b/vcpkg.json
+index c78078b..c5d8e47 100644
+--- a/vcpkg.json
++++ b/vcpkg.json
+@@ -14,17 +14,10 @@
+         "freetype",
+         "plutovg",
+ 
+-        {
+-            "name": "sdl2",
+-            "platform": "!ios"
+-        },
+-        {
+-            "name": "sdl2-ttf",
+-            "platform": "!ios"
+-        },
+         {
+             "name": "sdl3",
+-            "features": ["vulkan"],
++            "default-features": false,
++            "features": ["alsa", "vulkan", "wayland", "x11"],
+             "platform": "!ios & !osx"
+         },
+         {
+@@ -52,6 +45,6 @@
+             "platform": "linux"
+         }
+     ],
+-    "builtin-baseline": "8e8dfb4ba483886936ded5ca201b500b8d8b0096",
++    "builtin-baseline": "ec48c11eae9448c8c6e7739d93e06fa2433aa95f",
+     "overrides": []
+ }

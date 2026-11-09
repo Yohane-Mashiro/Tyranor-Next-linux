@@ -1,0 +1,40 @@
+diff --git a/core/utils/TVPSettings.cpp b/core/utils/TVPSettings.cpp
+index a31b202..13d1213 100644
+--- a/core/utils/TVPSettings.cpp
++++ b/core/utils/TVPSettings.cpp
+@@ -270,8 +270,26 @@ bool TVPParseArguments(int argc, char* argv[])
+     TVPAddImportantLog(TVPFormatMessage("(info) Game path : %1", TVPProjectData));
+ 
+     // savedata path
+-    TVPDataPath = TVPProjectDir + TJS_N("savedata/");
+-    TVPNativeDataPath = TVPGetLocallyAccessibleName(TVPDataPath);
++    const char* save_override = std::getenv("TYRANOR_SAVE_DIR");
++    if (save_override && save_override[0])
++    {
++        TVPNativeDataPath = ttstr(save_override);
++        if (TVPNativeDataPath.GetLen() == 0 ||
++            TVPNativeDataPath[TVPNativeDataPath.GetLen() - 1] != TJS_N('/'))
++        {
++            TVPNativeDataPath += TJS_N("/");
++        }
++        TVPDataPath = TVPNormalizeStorageName(TVPNativeDataPath);
++        if (!TVPCheckExistentLocalFolder(TVPNativeDataPath))
++        {
++            TVPCreateFolders(TVPNativeDataPath);
++        }
++    }
++    else
++    {
++        TVPDataPath = TVPProjectDir + TJS_N("savedata/");
++        TVPNativeDataPath = TVPGetLocallyAccessibleName(TVPDataPath);
++    }
+     TVPAddImportantLog(TVPFormatMessage("(info) Savedata path : %1", TVPDataPath));
+ 
+     // set log output directory
+@@ -353,4 +371,4 @@ void TVPSetCommandLine(const tjs_char* name, const ttstr& value)
+ 
+     // value not found; insert argument into front
+     TVPProgramArguments.insert(TVPProgramArguments.begin(), ttstr(name) + TJS_N("=") + value);
+-}
+\ No newline at end of file
++}

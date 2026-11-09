@@ -27,7 +27,33 @@ Tyranor Next 的原生 Linux 桌面版本。项目使用 Python、PyQt6 和 SQLi
 
 ![截图1](./截图1.png)
 
-![截图２](./截图２.png)
+![截图2](./截图2.png)
+
+## KiriKiri 源码构建
+
+固定提交的上游源码通过 Git 子模块引入：
+
+```bash
+git submodule update --init --recursive
+```
+
+源码位置：
+
+```text
+vendor/krkrsdl3
+```
+
+Linux 补丁位于 `packaging/krkrsdl3/patches/`，ALSA 的 vcpkg 覆层位于
+`packaging/krkrsdl3/vcpkg-overlays/alsa/`。
+
+准备好已安装系统 ALSA、Wayland、X11 和 Vulkan 开发包的环境，并设置
+`VCPKG_ROOT` 后运行：
+
+```bash
+./packaging/build-krkrsdl3-source.sh
+```
+
+脚本会应用补丁、构建 `krkrsdl3`，并生成 KiriKiri Runtime RPM 与源码 RPM。
 
 ## 许可证
 

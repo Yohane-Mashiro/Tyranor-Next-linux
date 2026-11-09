@@ -1,0 +1,5 @@
+{
+  "name": "alsa",
+  "version": "1.2.16.1",
+  "description": "System ALSA library wrapper for krkrsdl3"
+}
