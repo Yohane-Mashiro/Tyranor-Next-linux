@@ -8,6 +8,7 @@ dist/
 packaging/cache/
 packaging/krkr-src/
 *.desktop
+!packaging/io.github.tyranornext.linux.desktop
 *.AppImage
 *.zip
 *.whl
