@@ -13,3 +13,4 @@ index 6ac9391..fc1a62d 100644
 +                SDL_GetCurrentAudioDriver() ? SDL_GetCurrentAudioDriver() : "(none)");
          return SDL_APP_FAILURE;
      }
+ 

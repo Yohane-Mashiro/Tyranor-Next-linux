@@ -14,7 +14,9 @@ endif()
 
 file(GLOB asound_libraries
      "${system_prefix}/lib64/libasound.so.2*"
-     "${system_prefix}/lib/libasound.so.2*")
+     "${system_prefix}/lib/libasound.so.2*"
+     "/usr/lib64/libasound.so.2*"
+     "/usr/lib/libasound.so.2*")
 list(FILTER asound_libraries EXCLUDE REGEX "libasound\\.so\\.2$")
 list(GET asound_libraries 0 asound_library)
 get_filename_component(asound_name "${asound_library}" NAME)

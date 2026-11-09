@@ -112,6 +112,7 @@ jobs:
             gcc-c++ \
             git \
             libatomic \
+            libglvnd-devel \
             libtool \
             libX11-devel \
             libXcursor-devel \
@@ -120,12 +121,11 @@ jobs:
             libXi-devel \
             libXrandr-devel \
             libXrender-devel \
-            libXss-devel \
+            libXScrnSaver-devel \
             libxcb-devel \
             libxkbcommon-devel \
             mesa-libEGL-devel \
             mesa-libGL-devel \
-            mesa-libGLES-devel \
             nasm \
             ninja-build \
             patch \

@@ -5,7 +5,7 @@ ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 SOURCE="${KRKR_SOURCE_DIR:-$ROOT/vendor/krkrsdl3}"
 VCPKG_ROOT="${VCPKG_ROOT:-}"
 
-if [[ ! -f "$SOURCE/CMakePresets.json" || ! -f "$SOURCE/cpp/CMakeLists.txt" ]]; then
+if [[ ! -f "$SOURCE/CMakePresets.json" || ! -f "$SOURCE/cpp/core/utils/TVPSettings.cpp" ]]; then
     echo "KiriKiri source is missing." >&2
     echo "Run: git submodule update --init --recursive" >&2
     exit 2
@@ -44,7 +44,8 @@ export KRKR_ALSA_SYSROOT="${KRKR_ALSA_SYSROOT:-/usr}"
 
 (
     cd "$SOURCE_COPY"
-    cmake --preset "Linux Config"
+    cmake --preset "Linux Config" \
+        -DCMAKE_EXE_LINKER_FLAGS="${KRKR_LINKER_FLAGS:-}"
     cmake --build --preset "Linux Release Build" --parallel "${KRKR_BUILD_JOBS:-$(nproc)}"
 )
 
