@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Tyranor Next Linux
+Comment=Native Linux multi-engine visual novel launcher
+Exec=tyranor-next
+Icon=io.github.tyranornext.linux
+Terminal=false
+Categories=Game;AdventureGame;
+StartupNotify=true
+StartupWMClass=io.github.tyranornext.linux
