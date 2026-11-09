@@ -39,31 +39,6 @@ sudo dnf clean all
 sudo dnf makecache
 ```
 
-### 安装主程序
-
-```bash
-sudo dnf reinstall tyranor-next-linux
-```
-
-首次安装时，将命令中的 `reinstall` 改为 `install`。
-
-安装或补装运行时：
-
-```bash
-sudo dnf install \
-  tyranor-next-krkr-runtime \
-  tyranor-next-renpy-runtime
-```
-
-重新安装全部组件：
-
-```bash
-sudo dnf reinstall \
-  tyranor-next-linux \
-  tyranor-next-krkr-runtime \
-  tyranor-next-renpy-runtime
-```
-
 ### 软件包说明
 
 | 软件包 | 用途 | 架构 | 兼容性 |
@@ -71,43 +46,6 @@ sudo dnf reinstall \
 | `tyranor-next-linux` | 主程序，提供游戏库、引擎识别、封面、存档管理、WebDAV、XP3 工具和启动界面 | `noarch` | Fedora 45；依赖 PyQt6 WebEngine、KiriKiri 和 Ren'Py 运行时 |
 | `tyranor-next-krkr-runtime` | 原生 KiriKiri 运行时 `krkrsdl3`，用于启动 `.xp3` 游戏 | `x86_64` | Fedora 45 x86_64；支持 Wayland、ALSA、XP3 和中央存档目录 |
 | `tyranor-next-renpy-runtime` | Ren'Py 8.5.3 Linux 运行时，用于 Ren'Py 游戏 | `x86_64` | Fedora 45 x86_64；游戏自带启动器可执行时优先使用自带版本 |
-
-主程序 RPM 已声明两个运行时依赖，通常只需安装
-`tyranor-next-linux`。单独补装或修复运行时可使用上面的运行时安装命令。
-
-升级：
-
-```bash
-sudo dnf upgrade tyranor-next-linux \
-  tyranor-next-krkr-runtime \
-  tyranor-next-renpy-runtime
-```
-
-## 从源码构建 KiriKiri
-
-固定提交的上游源码通过 Git 子模块引入：
-
-```bash
-git submodule update --init --recursive
-```
-
-源码位置：
-
-```text
-vendor/krkrsdl3
-```
-
-Linux 补丁位于 `packaging/krkrsdl3/patches/`，ALSA 的 vcpkg 覆层位于
-`packaging/krkrsdl3/vcpkg-overlays/alsa/`。
-
-准备好已安装系统 ALSA、Wayland、X11 和 Vulkan 开发包的环境，并设置
-`VCPKG_ROOT` 后运行：
-
-```bash
-./packaging/build-krkrsdl3-source.sh
-```
-
-脚本会应用补丁、构建 `krkrsdl3`，并生成 KiriKiri Runtime RPM 与源码 RPM。
 
 ## 许可证
 
