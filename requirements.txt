@@ -1,0 +1,5 @@
+PyQt6>=6.7
+Pillow>=10
+requests>=2.31
+cryptography>=42
+lxml>=5

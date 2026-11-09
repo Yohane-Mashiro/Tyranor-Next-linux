@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tyranornext.linux</id>
+  <name>Tyranor Next Linux</name>
+  <summary>Multi-engine visual novel launcher for native Linux</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-only</project_license>
+  <url type="homepage">https://github.com/Weiss-UltimateSavior/Tyranor-Next</url>
+  <developer id="io.github.tyranornext">
+    <name>Tyranor Next Linux contributors</name>
+  </developer>
+  <icon type="stock">io.github.tyranornext.linux</icon>
+  <description>
+    <p>
+      Tyranor Next Linux is a native desktop port of the Tyranor Next multi-engine
+      visual novel launcher. It includes library scanning, engine detection,
+      cover metadata, save management, WebDAV sync, XP3 archive tools and native
+      Linux process launching.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.tyranornext.linux.desktop</launchable>
+  <provides>
+    <binary>tyranor-next</binary>
+  </provides>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <releases>
+    <release version="1.0.0" date="2026-11-09"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

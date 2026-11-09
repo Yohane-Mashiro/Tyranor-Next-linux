@@ -1,0 +1,20 @@
+Tyranor Next Linux 离线安装说明
+
+适用系统：Fedora Linux 45 x86_64
+
+安装：
+
+sudo dnf install \
+  tyranor-next-linux-1.0.0-7.fc45.noarch.rpm \
+  tyranor-next-krkr-runtime-0.0.6-4.gitbe6db96.fc45.x86_64.rpm \
+  tyranor-next-renpy-runtime-8.5.3-1.fc45.x86_64.rpm
+
+已安装旧版本时，把 dnf install 换成 dnf upgrade。
+
+统一存档目录：
+
+~/.local/share/tyranor-next-linux/saves/game-<游戏哈希>/data
+
+首次启动会把旧游戏目录中的存档复制到统一目录，已有中央存档不会被覆盖。
+
+当前 RPM 未做 GPG 签名。

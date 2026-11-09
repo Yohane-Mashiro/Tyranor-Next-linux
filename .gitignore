@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+packaging/cache/
+packaging/krkr-src/
+*.desktop
+*.AppImage
+*.zip
+*.whl
+.coverage
