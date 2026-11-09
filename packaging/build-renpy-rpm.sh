@@ -51,11 +51,11 @@ rpmbuild \
     --define "_srcrpmdir $BUILD_ROOT/SRPMS" \
     -ba "$ROOT/packaging/${NAME}.spec"
 
-mkdir -p "$ROOT/dist"
-cp "$BUILD_ROOT/RPMS/x86_64/"*.rpm "$ROOT/dist/"
-cp "$BUILD_ROOT/SRPMS/"*.src.rpm "$ROOT/dist/"
+mkdir -p "$ROOT/dist/release" "$ROOT/dist/source"
+cp "$BUILD_ROOT/RPMS/x86_64/"*.rpm "$ROOT/dist/release/"
+cp "$BUILD_ROOT/SRPMS/"*.src.rpm "$ROOT/dist/source/"
 
 echo "Built:"
-find "$ROOT/dist" -maxdepth 1 -type f \
+find "$ROOT/dist" -maxdepth 2 -type f \
     \( -name "${NAME}-${VERSION}*.rpm" -o -name "${NAME}-${VERSION}*.src.rpm" \) \
     -printf '  %p\n' | sort
